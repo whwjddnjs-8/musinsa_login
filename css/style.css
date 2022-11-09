@@ -1,0 +1,332 @@
+@charset 'utf-8';
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+
+* {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	outline: none;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+	color: #222;
+	background-color: rgb(240, 240, 240);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	font-size: 14px;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* 로그인 box container */
+.login_container {
+	width: 454px;
+	background-color: #fff;
+	height: 100vh;
+	text-align: center;
+}
+
+.login {
+	padding: 0 30px;
+}
+
+.login_title {
+	font-size: 16px;
+	font-weight: bold;
+	margin-top: 73px;
+}
+
+.tab_area {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	font-size: 16px;
+	font-weight: bold;
+	padding-top: 25px;
+}
+
+.tab_area span {
+	width: 48%;
+	color: #b3b3b3;
+	cursor: pointer;
+	position: relative;
+	padding-bottom: 12px;
+}
+
+.tab_area span:after,
+.tab_area span.active:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background-color: #b3b3b3;
+	width: 100%;
+	height: 1px;
+}
+
+.tab_area span.active {
+	color: #222;
+}
+
+.tab_area span.active:after {
+	background-color: #222;
+	height: 2px;
+}
+
+/* Form - login_area */
+form.login_area {
+	padding: 0 24px;
+	margin-top: 20px;
+}
+
+.input_area>input[type=text] {
+	display: block;
+	width: 100%;
+	height: 48px;
+	border: 1px solid #e5e5e5;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	padding-left: 13px;
+	transition: 0.35s;
+}
+
+.input_area>input[type=text]::placeholder,
+.pwd_input::placeholder {
+	font-size: 15px;
+}
+
+.input_area>input[type=text]:focus {
+	border: 1px solid #999999;
+}
+
+.password {
+	display: flex;
+	justify-content: space-between;
+	border: 1px solid #e5e5e5;
+	height: 48px;
+	border-radius: 5px;
+	overflow: hidden;
+	transition: 0.35s;
+}
+
+.input_area .pwd_input {
+	display: inline-block;
+	width: 90%;
+	height: 100%;
+	border: 1px solid transparent;
+	margin-bottom: 10px;
+	padding-left: 13px;
+	transition: 0.35s;
+	outline: none;
+}
+
+.password span {
+	background: url(../images/showing.svg) no-repeat center right 10px;
+	padding-right: 50px;
+	border: none;
+	cursor: pointer;
+}
+
+.password span.active {
+	background: url(../images/not-showing.svg) no-repeat center right 10px;
+	padding-right: 50px;
+	border: none;
+	cursor: pointer;
+}
+
+.input_area>button {
+	width: 100%;
+	display: block;
+	background-color: #000;
+	color: #fff;
+	height: 50px;
+	border-radius: 5px;
+	font-weight: bold;
+	margin-top: 20px;
+}
+
+/* Form - Info Area  */
+.info_area {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 15px;
+}
+
+.check_box {
+	position: relative;
+}
+
+.check_box label {
+	margin-left: 5px;
+}
+
+.check_box input[type=checkbox] {
+	display: none;
+}
+
+label em {
+	width: 18px;
+	height: 18px;
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 5px;
+	background: url(../images/checkbox.png) no-repeat;
+	background-position: left center;
+}
+
+.check_box input[type=checkbox]:checked+label em {
+	background-position: right center;
+}
+
+.check_box input[type=checkbox]:checked~.toggleMsg {
+	top: 30px;
+	opacity: 1;
+}
+
+.toggleMsg {
+	position: absolute;
+	top: 20px;
+	left: 0;
+	background-color: #0078ff;
+	color: #fff;
+	display: inline-block;
+	width: 265px;
+	padding: 8px;
+	font-size: 11px;
+	border-radius: 5px;
+	opacity: 0;
+	transition: 0.35s;
+}
+
+.toggleMsg::before {
+	position: absolute;
+	content: '';
+	top: -3px;
+	left: 12px;
+	background-color: #0078ff;
+	width: 7px;
+	height: 7px;
+	transform: rotate(-45deg);
+}
+
+
+
+.find_login {
+	color: #aaa;
+}
+
+.find_login a:first-child {
+	position: relative;
+}
+
+.find_login a:first-child::after {
+	position: absolute;
+	content: '';
+	right: -9px;
+	top: 4px;
+	width: 1px;
+	height: 14px;
+	background-color: #d8d8d8;
+
+}
+
+.find_login a:last-child {
+	margin-left: 13px;
+}
+
+/* Form - btn Area  */
+.btn_area button {
+	width: 100%;
+	display: block;
+	border-radius: 5px;
+	font-weight: bold;
+	height: 45px;
+	font-size: 15px;
+	cursor: pointer;
+}
+
+.btn_area button:first-child {
+	margin-top: 22px;
+	background-color: #fee500;
+	border: 1px solid #fee500;
+
+}
+
+.btn_area button img {
+	width: 18px;
+	margin-right: 5px;
+	vertical-align: middle;
+}
+
+.btn_area button:last-child {
+	margin-top: 12px;
+	background: #fff;
+	border: 1px solid #bfbfbf;
+}
+
+/* Not Member Show Area  */
+form.not_member_show {
+	display: none;
+	padding: 0 24px;
+	margin-top: 20px;
+}
+
+.not_member_show .input label {
+	float: left;
+	margin-bottom: 10px;
+}
+
+.not_member_show .input input[type=text] {
+	display: block;
+	width: 100%;
+	height: 48px;
+	border: 1px solid #e5e5e5;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	padding-left: 13px;
+	transition: 0.35s;
+	margin-bottom: 20px;
+	transition: 0.35s;
+}
+
+.not_member_show .input input[type=text]:focus {
+	border: 1px solid #999999;
+}
+
+.not_member_show button {
+	width: 100%;
+	display: block;
+	background-color: #f3f3f3;
+	color: #b3b3b3;
+	height: 50px;
+	border-radius: 5px;
+	font-weight: bold;
+	margin-top: 20px;
+	border: none;
+	cursor: pointer;
+}
+
+/* Sign Up */
+.sign_up {
+	margin-top: 40px;
+}
+
+.sign_up span {
+	color: #0078ff;
+	font-size: 15px;
+}
+
+.sign_up span a {
+	border: 1px solid #0078ff;
+	padding: 3px 8px;
+	border-radius: 5px;
+	margin-left: 2px;
+}
